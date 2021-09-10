@@ -22,7 +22,9 @@ for i, step in enumerate(main_page):
     res.raise_for_status()
     step_soup = BeautifulSoup(res.text, "lxml")
 
-    problems = step_soup.find("table", attrs={"class": "table table-striped table-bordered sortable-table clickable-table", "id": "problemset"}).tbody
+    problems = step_soup.find("table",
+                              attrs={"class": "table table-striped table-bordered sortable-table clickable-table",
+                                     "id": "problemset"}).tbody
 
     lst = [[] for _ in range(len(problems) // 2)]
     idx = 0
