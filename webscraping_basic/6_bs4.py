@@ -15,7 +15,7 @@ soup = BeautifulSoup(res.text, "lxml")
 # print(soup.a.attrs)   # a element의 속성 정보를 출력
 # print(soup.a["href"]) # a element의 href 속성 '값' 정보를 출력
 
-# print(soup.find("a", attrs={"class": "Nbtn_upload"}))   # class="Nbtn_upload"인 a element를 찾음
+# print(soup.find("a", attrs={"class": "Nbtn_upload"}))     # class="Nbtn_upload"인 a element를 찾음
 # print(soup.find(attrs={"class": "Nbtn_upload"}))          # class="Nbtn_upload"인 어떤 element를 찾음
 
 # print(soup.find("li", attrs={"class": "rank01"}))

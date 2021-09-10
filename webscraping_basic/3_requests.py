@@ -3,7 +3,7 @@ import requests
 # res = requests.get('http://nadocoding.tistory.com')
 # res = requests.get('http://naver.com')
 
-res = requests.get('https://www.google.com')
+res = requests.get('http://eclass.kpu.ac.kr/ilos/main/main_form.acl')
 res.raise_for_status()    # 해당 URL에 대한 접근이 문제가 있다면 에러 출력
 
 # print("응답코드: ", res.status_code)    # 200: 정상 / 403: 권한 없음
@@ -16,6 +16,6 @@ res.raise_for_status()    # 해당 URL에 대한 접근이 문제가 있다면 �
 print(len(res.text))
 print(res.text)
 
-with open("mygoogle.html", "w", encoding="utf8") as f:
+with open("eclass.html", "w", encoding="utf8") as f:
   f.write(res.text)
 
