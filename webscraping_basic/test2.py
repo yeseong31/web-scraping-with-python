@@ -13,8 +13,8 @@ soup = BeautifulSoup(res.text, "lxml")
 main_page = soup.find("table", attrs={"class": "table table-bordered table-striped"}).tbody
 dic = collections.defaultdict(list)
 
-print("*** 백준 - 단계별로 풀어보기의 모든 문제 정보 ***")
-print("*** [문제 번호, 제목, 정답, 제출, 설명] ***")
+print("*** 백준 - 단계별로 풀어보기의 모든 문제 스크래핑 ***")
+print("*** 단계   [문제 번호, 제목, 정답, 제출, 설명]  ***")
 
 for i, step in enumerate(main_page):
     step_url = url[:-5] + step.a["href"]
@@ -44,14 +44,17 @@ for i, step in enumerate(main_page):
             lst[idx].append(title.get_text())
             # 정답자 수
             correct = title.next_sibling.next_sibling
-            lst[idx].append(correct.get_text())
+            lst[idx].append(int(correct.get_text()))
             # 제출자 수
             submission = correct.next_sibling
-            lst[idx].append(submission.get_text())
+            lst[idx].append(int(submission.get_text()))
             # 정답 비율
             # ratio = round(int(correct.get_text()) * 100 / int(submission.get_text()), 3)
             # lst[idx].append(ratio)
 
-for d in dic:
-    print(dic[d])
+# for d in dic:
+#     print(d, '\t', dic[d])
 
+with open("baekjoon.txt", "w", encoding="utf8") as f:
+    for d in dic:
+        f.write(f'{d} \t{dic[d]}\n')
