@@ -24,8 +24,8 @@ browser.back()
 # 네이버 검색
 elem = browser.find_element_by_id('query')
 elem.click()
-# '나도코딩' 검색어 입력 후 enter 입력
-elem.send_keys('나도코딩')
+# '테스트' 검색어 입력 후 enter 입력
+elem.send_keys('테스트')
 elem.send_keys(Keys.ENTER)
 
 elem = browser.find_element_by_tag_name('a')
