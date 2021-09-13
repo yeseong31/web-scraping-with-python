@@ -8,7 +8,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-browser = webdriver.Chrome('C:/Yeseong31/Study/PROJECT/Webscraping/chromedriver.exe')
+browser = webdriver.Chrome('../chromedriver.exe')
 browser.get('https://naver.com')
 
 # 네이버 로그인 버튼 클릭
