@@ -39,3 +39,7 @@ elem = browser.find_element_by_xpath('//*[@id="daumSearch"]/fieldset/div/div/but
 browser.close()
 # 모든 브라우저를 닫음
 browser.quit()
+
+# -----------------------------------------------------------------------------------------
+# 네이버 로그인 자동입력 방지 우회 방법은...
+# https://jaeseokim.dev/Python/python-Selenium%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9B%B9-%ED%81%AC%EB%A1%A4%EB%A7%81-Naver-login-%ED%9B%84-%EA%B5%AC%EB%8F%85-Feed-%ED%81%AC%EB%A1%A4%EB%A7%81/
