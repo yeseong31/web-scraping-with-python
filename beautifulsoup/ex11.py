@@ -5,7 +5,7 @@ data = get_html()
 
 soup = BeautifulSoup(data, 'html.parser')
 
-# 결과 None , 계층 접근은 중간에 생략하지 말자.
+# 결과 None, 계층 접근은 중간에 생략하지 말자.
 print(soup.select_one('html > div')) 
 print()
 print(soup.select_one('body > div'))
