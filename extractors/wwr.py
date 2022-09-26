@@ -6,8 +6,9 @@ from bs4 import BeautifulSoup
 def extract_wwr_jobs(keyword):
     """We Work Repotely 페이지에서 keyword에 대한 검색 결과로
     회사명, 지역, 포지션을 반환하는 함수"""
-    base_url = 'https://weworkremotely.com/remote-jobs/search?term='
-    response = get(f'{base_url}{keyword}')
+    base_url = 'https://weworkremotely.com'
+    sub_url = '/remote-jobs/search?term='
+    response = get(f'{base_url}{sub_url}{keyword}')
 
     result = []
 
@@ -18,13 +19,15 @@ def extract_wwr_jobs(keyword):
         for job_section in jobs:
             for post in job_section.find_all('li')[:-1]:
                 anchors = post.find_all('a')[1]
+                link = anchors['href']
                 company, kind, region = anchors.find_all('span', class_='company')
                 title = anchors.find('span', class_='title')
 
                 result.append({
-                    'company': company.text,
-                    'region': region.text,
-                    'position': title.text,
+                    'link': f'{base_url}{link}',
+                    'company': company.text.replace(',', ''),
+                    'location': region.text.replace(',', ''),
+                    'position': title.text.replace(',', ''),
                 })
 
     return result
