@@ -10,6 +10,7 @@ environ==1.0
 et-xmlfile==1.1.0
 h11==0.13.0
 idna==3.4
+lxml==4.9.1
 numpy==1.23.3
 openpyxl==3.0.10
 outcome==1.2.0
